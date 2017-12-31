@@ -22,7 +22,7 @@ public:
     friend ostream& operator<<(ostream& o, const assocTab& src)
     {
         unsigned int size = src.list.size();
-        int i;
+        unsigned int i;
         o << "People:" << endl;
         for ( i = 0; i< size; i++ )
         {
@@ -36,12 +36,16 @@ public:
     E* Find(I var)
     {
         unsigned int size = list.size();
-        int i;
+        unsigned int i;
         for ( i = 0; i< size; i++ )
         {
             if(list[i].id == var)
                 return &(list[i].employee);
         }
         return NULL;
+    }
+    assocTab& operator=(const assocTab& src)
+    {
+        list = src.list;
     }
 };
